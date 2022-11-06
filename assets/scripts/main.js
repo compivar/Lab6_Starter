@@ -86,6 +86,9 @@ function initFormHandler() {
     for (const [key, value] of formData) {
       recipeObject[`${key}`] = `${value}`; //B5
     }
+    if(recipeObject["imgSrc"] == "") {
+      return;
+    }
     let card = document.createElement("recipe-card"); //B6
     card.data = recipeObject; //B7
     document.querySelector("main").append(card); //B8
